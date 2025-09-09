@@ -46,4 +46,63 @@ For demonstration, we also use a small random subset (~2k users × 1k items) to 
 > **Note:** Scores on the subset are much lower in absolute value than full dataset results.
 > Reviewers should focus on relative trends and Pareto trade-offs.
 
-## 
+## Usage
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/<your-username>/FASMOEA.git
+cd FASMOEA
+```
+
+### 2. Open the notebook
+
+Run either in Jupyter or Google Colab:
+```bash
+jupyter notebook FAS_MOEA.ipynb
+```
+
+### 3. Execution flow
+
+The notebook is organized into the following sections:
+
+#### a. Data Preprocessing
+- Load and sample dataset
+- Build user-item interaction matrix
+- Extract item popularity & categories
+
+#### b. Baseline Construction
+- User-based collaborative filtering (accuracy baseline)
+- Popularity-based model
+- Novelty and genre distributions
+
+#### c. Objective Definition
+- Accuracy metrics (Precision@K, Recall@K, nDCG@K, MAP)
+- Fairness (exposure balance across groups)
+- Serendipity (unexpected yet relevant recommendations)
+
+#### d. Optimization (NSGA-II)
+- Multi-objective problem definition
+- Custom operators:
+   - List-aware crossover (preserves ranked lists)
+   - Targeted mutation (injects novelty/serendipity)
+- Evolutionary loop with Pareto front extraction
+
+#### e. Evaluation
+- Compute all metrics: Accuracy, Diversity, Novelty, Explainability, Fairness, Serendipity
+- Visualize Pareto fronts (e.g., Accuracy vs Fairness, Accuracy vs Serendipity)
+- Compare against baselines  
+
+## Visualizations
+
+The notebook generates plots including:
+
+- #### Pareto front scatter plots:
+   - Accuracy vs Fairness
+   - Accuracy vs Serendipity
+   - Multi-dimensional trade-off fronts
+
+- #### Metric comparison bar charts:
+   - Precision, Recall, nDCG across methods
+   - Diversity, Explainability, Novelty trade-offs
+
+These plots highlight relative performance trends even when absolute scores are small.
