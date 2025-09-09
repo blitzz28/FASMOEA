@@ -50,7 +50,7 @@ For demonstration, we also use a small random subset (~2k users × 1k items) to 
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/<your-username>/FASMOEA.git
+git clone https://github.com/blitzz28/FASMOEA.git
 cd FASMOEA
 ```
 
